@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F7F7">
+
+    <!-- Logo top - replace src with your actual logo drawable -->
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:src="@drawable/logo_ic"
+        android:scaleType="fitCenter"
+        android:contentDescription="@string/logo"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:padding="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="56dp" />
+
+    <!-- Illustration card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_illustration"
+        android:layout_width="0dp"
+        android:layout_height="260dp"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="#FFFFFF"
+        android:layout_marginHorizontal="32dp"
+        app:layout_constraintTop_toBottomOf="@id/iv_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_get_start"
+        app:layout_constraintVerticalBias="0.35"
+        android:layout_marginTop="24dp">
+
+        <!-- Replace with your illustration image -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/welcome_ic2"
+            android:scaleType="centerInside"
+            android:padding="16dp"
+            android:contentDescription="@string/get_start" />
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Get Start Button -->
+    <Button
+        android:id="@+id/btn_get_start"
+        android:layout_width="200dp"
+        android:layout_height="52dp"
+        android:text="@string/get_start1"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif-medium"
+        android:backgroundTint="#3E5BE8"
+        android:stateListAnimator="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="80dp" />
+
+    <!-- Dot indicators -->
+    <LinearLayout
+        android:id="@+id/dots_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="8dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toTopOf="@id/btn_get_start"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="20dp">
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:background="#CCCCCC"
+            android:layout_marginHorizontal="4dp" />
+
+        <View
+            android:layout_width="24dp"
+            android:layout_height="8dp"
+            android:background="#3E5BE8"
+            android:layout_marginHorizontal="4dp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
