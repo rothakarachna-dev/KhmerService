@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">KhmerService</string>
+    <string name="logo">KhmerCare Logo</string>
+    <string name="trusted_service">Find trusted services near you</string>
 </resources>
