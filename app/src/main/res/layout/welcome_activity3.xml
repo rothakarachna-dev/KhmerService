@@ -12,16 +12,17 @@
         android:id="@+id/iv_logo"
         android:layout_width="72dp"
         android:layout_height="72dp"
-        android:src="@drawable/logo_ic"
-        android:scaleType="fitCenter"
-        android:contentDescription="@string/logo"
+        android:layout_marginTop="56dp"
         android:background="@android:color/white"
+        android:contentDescription="@string/logo"
         android:elevation="4dp"
         android:padding="8dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logo_ic"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="56dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/logo_ic" />
 
     <!-- Illustration card -->
     <androidx.cardview.widget.CardView
