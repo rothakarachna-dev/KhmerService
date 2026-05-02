@@ -8,12 +8,12 @@
     android:background="#F7F7F7">
 
     <!-- Logo top - replace src with your actual logo drawable -->
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/iv_logo"
         android:layout_width="72dp"
         android:layout_height="72dp"
         android:src="@drawable/logo_ic"
-        android:scaleType="fitCenter"
+        android:scaleType="centerCrop"
         android:contentDescription="@string/logo"
         android:background="@android:color/white"
         android:elevation="4dp"
@@ -21,7 +21,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="56dp" />
+        android:layout_marginTop="56dp"
+
+        app:shapeAppearanceOverlay="@style/CircleShape"
+        />
 
     <!-- Illustration card -->
     <androidx.cardview.widget.CardView
