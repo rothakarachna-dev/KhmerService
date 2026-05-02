@@ -7,12 +7,12 @@
     android:background="#F7F7F7">
 
     <!-- Logo top - replace src with your actual logo drawable -->
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/iv_logo"
         android:layout_width="72dp"
         android:layout_height="72dp"
         android:src="@drawable/logo_ic"
-        android:scaleType="fitCenter"
+        android:scaleType="centerCrop"
         android:contentDescription="@string/logo"
         android:background="@android:color/white"
         android:elevation="4dp"
@@ -20,7 +20,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="56dp" />
+        android:layout_marginTop="56dp"
+
+        app:shapeAppearanceOverlay="@style/CircleShape"
+        />
 
     <!-- Illustration card -->
     <androidx.cardview.widget.CardView
@@ -34,36 +37,35 @@
         app:layout_constraintTop_toBottomOf="@id/iv_logo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/btn_get_start"
-        app:layout_constraintVerticalBias="0.35"
+        app:layout_constraintBottom_toTopOf="@id/tv_subtitle"
+        app:layout_constraintVerticalBias="0.4"
         android:layout_marginTop="24dp">
 
         <!-- Replace with your illustration image -->
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/welcome_ic2"
+            android:src="@drawable/welcome_ic1"
             android:scaleType="centerInside"
             android:padding="16dp"
-            android:contentDescription="@string/get_start" />
+            android:contentDescription="@string/book" />
 
     </androidx.cardview.widget.CardView>
 
-    <!-- Get Start Button -->
-    <Button
-        android:id="@+id/btn_get_start"
-        android:layout_width="200dp"
-        android:layout_height="52dp"
-        android:text="@string/get_start1"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:fontFamily="sans-serif-medium"
-        android:backgroundTint="#3E5BE8"
-        android:stateListAnimator="@null"
+    <!-- Subtitle -->
+    <TextView
+        android:id="@+id/tv_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/book1"
+        android:textColor="#B6AE9F"
+        android:textSize="14sp"
+        android:fontFamily="sans-serif"
+        android:letterSpacing="0.02"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="80dp" />
+        android:layout_marginBottom="60dp" />
 
     <!-- Dot indicators -->
     <LinearLayout
@@ -72,21 +74,21 @@
         android:layout_height="8dp"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        app:layout_constraintBottom_toTopOf="@id/btn_get_start"
+        app:layout_constraintBottom_toTopOf="@id/tv_subtitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="20dp">
-
-        <View
-            android:layout_width="8dp"
-            android:layout_height="8dp"
-            android:background="#CCCCCC"
-            android:layout_marginHorizontal="4dp" />
+        android:layout_marginBottom="16dp">
 
         <View
             android:layout_width="24dp"
             android:layout_height="8dp"
             android:background="#3E5BE8"
+            android:layout_marginHorizontal="4dp" />
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:background="#CCCCCC"
             android:layout_marginHorizontal="4dp" />
 
     </LinearLayout>
