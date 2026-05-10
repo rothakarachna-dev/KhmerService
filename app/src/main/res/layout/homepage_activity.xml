@@ -400,23 +400,31 @@
             android:layout_margin="20dp"
             android:src="@drawable/ic_home"/>
 
-        <ImageView
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:layout_margin="20dp"
-            android:src="@drawable/ic_calendar"/>
-
 
         <ImageView
             android:layout_width="28dp"
             android:layout_height="28dp"
             android:layout_margin="20dp"
-            android:src="@drawable/ic_message"/>
+            android:src="@drawable/ic_profile"/>
         <ImageView
             android:layout_width="28dp"
             android:layout_height="28dp"
             android:layout_margin="20dp"
-            android:src="@drawable/ic_message"/>
+            android:src="@drawable/ic_profile"/>
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/ic_profile"/>
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/ic_profile"/>
+
+
+
+
 
 
     </LinearLayout>
