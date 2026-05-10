@@ -46,7 +46,6 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/ic_notification"/>
-
             </LinearLayout>
 
             <!-- SEARCH -->
@@ -80,7 +79,6 @@
 
             </androidx.cardview.widget.CardView>
 
-
             <!-- CATEGORY -->
             <GridLayout
                 android:layout_width="match_parent"
@@ -88,7 +86,30 @@
                 android:layout_marginTop="18dp"
                 android:columnCount="4">
 
+
                 <!-- ITEM -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        app:cardCornerRadius="30dp"
+                        app:cardElevation="3dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="14dp"
+                            android:src="@drawable/ic_tools"/>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout> <!-- ITEM -->
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -249,29 +270,7 @@
                     </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
-                <!-- ITEM -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="8dp">
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        app:cardCornerRadius="30dp"
-                        app:cardElevation="3dp">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:padding="14dp"
-                            android:src="@drawable/ic_tools"/>
-                    </androidx.cardview.widget.CardView>
-
-                </LinearLayout>
                 <!-- COPY ABOVE BLOCK 7 TIMES -->
 
             </GridLayout>
@@ -372,7 +371,6 @@
                                 android:textSize="12sp"/>
                         </LinearLayout>
 
-
                     </LinearLayout>
 
                     <TextView
@@ -381,7 +379,6 @@
                         android:text="Off 20%"
                         android:textColor="#F44336"/>
                 </LinearLayout>
-
 
             </androidx.cardview.widget.CardView>
 
@@ -409,22 +406,17 @@
             android:layout_margin="20dp"
             android:src="@drawable/ic_calendar"/>
 
-        <ImageView
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:layout_margin="20dp"
-            android:src="@drawable/ic_message"/>
 
         <ImageView
             android:layout_width="28dp"
             android:layout_height="28dp"
             android:layout_margin="20dp"
-            android:src="@drawable/ic_profile"/>
+            android:src="@drawable/ic_message"/>
         <ImageView
             android:layout_width="28dp"
             android:layout_height="28dp"
             android:layout_margin="20dp"
-            android:src="@drawable/ic_profile"/>
+            android:src="@drawable/ic_message"/>
 
 
     </LinearLayout>
