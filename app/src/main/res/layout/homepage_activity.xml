@@ -88,9 +88,13 @@
 
 
                 <!-- ITEM -->
+                <!-- ITEM -->
+                <!-- ITEM -->
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="0"
                     android:layout_columnWeight="1"
                     android:gravity="center"
                     android:orientation="vertical"
@@ -105,11 +109,37 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:padding="14dp"
-                            android:src="@drawable/ic_tools"/>
+                            android:padding=""
+                            android:src="@drawable/ic_tool1" />
                     </androidx.cardview.widget.CardView>
 
-                </LinearLayout> <!-- ITEM -->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        app:cardCornerRadius="30dp"
+                        app:cardElevation="3dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="dp"
+                            android:src="@drawable/ic_tool2" />
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -127,8 +157,8 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:padding="14dp"
-                            android:src="@drawable/ic_tools"/>
+                            android:padding="dp"
+                            android:src="@drawable/ic_tool3"/>
                     </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
@@ -150,31 +180,9 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:padding="14dp"
-                            android:src="@drawable/ic_tools"/>
-                    </androidx.cardview.widget.CardView>
+                            android:padding="20dp"
+                            android:src="@drawable/ic_tool4"/>
 
-                </LinearLayout>
-                <!-- ITEM -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        app:cardCornerRadius="30dp"
-                        app:cardElevation="3dp">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:padding="14dp"
-                            android:src="@drawable/ic_tools"/>
                     </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
@@ -428,5 +436,17 @@
 
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_tool4" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_tool4" />
 
 </LinearLayout>
