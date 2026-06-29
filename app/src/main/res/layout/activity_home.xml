@@ -31,21 +31,25 @@
                     android:layout_height="40dp"
                     android:background="@drawable/circle_bg"
                     android:padding="6dp"
-                    android:src="@drawable/ic_avatar_placeholder"/>
+                    android:src="@drawable/profile1_ic"
+                    android:contentDescription="@string/profile_picture"/>
 
                 <TextView
+                    android:id="@+id/tvHelloUser"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_marginStart="12dp"
-                    android:text="Hello User!"
                     android:textSize="17sp"
                     android:textColor="#555"/>
 
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/ic_phone"/>
+                    android:src="@drawable/ic_phone"
+                    android:background="@drawable/circle_bg"
+                    android:contentDescription="@string/call_support"/>
+
             </LinearLayout>
 
             <!-- SEARCH BAR -->
@@ -68,13 +72,17 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:hint="Search"
+                        android:hint="@string/search"
                         android:background="@null"
+                        android:inputType="text"
+                        android:imeOptions="actionSearch"
+                        android:importantForAutofill="no"
                         android:textSize="14sp"/>
 
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
+                        android:contentDescription="@string/search_icon"
                         android:src="@drawable/ic_search"/>
                 </LinearLayout>
 
@@ -109,14 +117,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:padding="14dp"
-                            android:src="@drawable/ic_repair"/>
+                            android:src="@drawable/ic_repair"
+                            android:contentDescription="@string/repair_icon"/>
                     </androidx.cardview.widget.CardView>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Repair"
+                        android:text="@string/repair_icon"
                         android:textSize="12sp"
                         android:textColor="#444"/>
                 </LinearLayout>
@@ -142,14 +151,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:padding="14dp"
-                            android:src="@drawable/ic_painting"/>
+                            android:src="@drawable/ic_painting"
+                            android:contentDescription="@string/painting_icon"/>
                     </androidx.cardview.widget.CardView>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Painting"
+                        android:text="@string/painting_icon"
                         android:textSize="12sp"
                         android:textColor="#444"/>
                 </LinearLayout>
@@ -175,14 +185,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:padding="14dp"
-                            android:src="@drawable/ic_plumber"/>
+                            android:src="@drawable/ic_plumber"
+                            android:contentDescription="@string/plumber_icon"/>
                     </androidx.cardview.widget.CardView>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Plumber"
+                        android:text="@string/plumber_icon"
                         android:textSize="12sp"
                         android:textColor="#444"/>
                 </LinearLayout>
@@ -208,14 +219,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:padding="14dp"
-                            android:src="@drawable/ic_gardener"/>
+                            android:src="@drawable/ic_gardener"
+                            android:contentDescription="@string/gardener_icon"/>
                     </androidx.cardview.widget.CardView>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Gardener"
+                        android:text="@string/gardener_icon"
                         android:textSize="12sp"
                         android:textColor="#444"/>
                 </LinearLayout>
@@ -242,14 +254,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:padding="14dp"
-                            android:src="@drawable/ic_ac_repair"/>
+                            android:src="@drawable/ic_ac_repair"
+                            android:contentDescription="@string/ac_repair_icon"/>
                     </androidx.cardview.widget.CardView>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="AC Repair"
+                        android:text="@string/ac_repair_icon"
                         android:textSize="12sp"
                         android:textColor="#444"/>
                 </LinearLayout>
@@ -275,14 +288,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:padding="14dp"
-                            android:src="@drawable/ic_cleaning"/>
+                            android:src="@drawable/ic_cleaning"
+                            android:contentDescription="@string/cleaning_icon"/>
                     </androidx.cardview.widget.CardView>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Cleaning"
+                        android:text="@string/cleaning_icon"
                         android:textSize="12sp"
                         android:textColor="#444"/>
                 </LinearLayout>
@@ -308,14 +322,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:padding="14dp"
-                            android:src="@drawable/ic_moving"/>
+                            android:src="@drawable/ic_moving"
+                            android:contentDescription="@string/moving_icon"/>
                     </androidx.cardview.widget.CardView>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Moving"
+                        android:text="@string/moving_icon"
                         android:textSize="12sp"
                         android:textColor="#444"/>
                 </LinearLayout>
@@ -341,14 +356,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:padding="14dp"
-                            android:src="@drawable/ic_carpenter"/>
+                            android:src="@drawable/ic_carpenter"
+                            android:contentDescription="@string/carpenter_icon"/>
                     </androidx.cardview.widget.CardView>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Carpenter"
+                        android:text="@string/carpenter_icon"
                         android:textSize="12sp"
                         android:textColor="#444"/>
                 </LinearLayout>
@@ -362,7 +378,8 @@
                 android:layout_marginTop="20dp"
                 android:background="#DDD"
                 android:scaleType="centerCrop"
-                android:src="@drawable/banner"/>
+                android:src="@drawable/banner"
+                android:contentDescription="@string/banner_image"/>
 
             <!-- POPULAR SERVICE TITLE -->
             <LinearLayout
@@ -375,7 +392,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Popular Service"
+                    android:text="@string/popular_service"
                     android:textColor="#777"
                     android:textSize="14sp"
                     android:textStyle="bold"/>
@@ -383,13 +400,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="See All"
+                    android:text="@string/see_all"
                     android:textColor="#777"
                     android:textSize="14sp"/>
             </LinearLayout>
 
-            <!-- CARD 1: Electrician -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardAC_repair"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
@@ -409,7 +426,8 @@
                         android:background="@drawable/circle_bg"
                         android:padding="2dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/electrician"/>
+                        android:src="@drawable/electrician"
+                        android:contentDescription="@string/ac_repair_icon"/>
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -421,7 +439,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Electrician"
+                            android:text="@string/ac_repair_icon"
                             android:textStyle="bold"
                             android:textSize="17sp"
                             android:textColor="#444"/>
@@ -429,7 +447,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="By So phana"
+                            android:text="@string/electrician_name"
                             android:textColor="#777"
                             android:textSize="13sp"/>
 
@@ -442,10 +460,10 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="⭐ 4.5"
-                                android:background="#FFE082"
+                                android:background="#4DFFE082"
                                 android:padding="6dp"
-                                android:textSize="12sp"/>
+                                android:text="⭐ 4.5"
+                                android:textSize="12sp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -490,7 +508,8 @@
                         android:background="@drawable/circle_bg"
                         android:padding="10dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/ic_avatar_placeholder"/>
+                        android:src="@drawable/plumber_ic"
+                        android:contentDescription="@string/plumber_provider_photo"/>
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -502,7 +521,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Plumber"
+                            android:text="@string/plumber_icon"
                             android:textStyle="bold"
                             android:textSize="17sp"
                             android:textColor="#444"/>
@@ -510,7 +529,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="By Ty nita"
+                            android:text="@string/plumber_name"
                             android:textColor="#777"
                             android:textSize="13sp"/>
 
@@ -524,7 +543,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="⭐ 4.5"
-                                android:background="#FFE082"
+                                android:background="#4DFFE082"
                                 android:padding="6dp"
                                 android:textSize="12sp"/>
 
@@ -572,7 +591,8 @@
                         android:background="@drawable/circle_bg"
                         android:padding="10dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/ic_avatar_placeholder"/>
+                        android:src="@drawable/cleaner_ic"
+                        android:contentDescription="@string/cleaning_provider_photo"/>
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -584,7 +604,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Cleaning"
+                            android:text="@string/cleaning_icon"
                             android:textStyle="bold"
                             android:textSize="17sp"
                             android:textColor="#444"/>
@@ -592,7 +612,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="By Sovana"
+                            android:text="@string/cleaner_name"
                             android:textColor="#777"
                             android:textSize="13sp"/>
 
@@ -606,7 +626,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="⭐ 4.5"
-                                android:background="#FFE082"
+                                android:background="#4DFFE082"
                                 android:padding="6dp"
                                 android:textSize="12sp"/>
 
@@ -635,13 +655,13 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- BOTTOM NAVIGATION: 5 icons, last one highlighted -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:background="#FFFFFF"
         android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:baselineAligned="false">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -652,7 +672,8 @@
             <ImageView
                 android:layout_width="26dp"
                 android:layout_height="26dp"
-                android:src="@drawable/ic_home"/>
+                android:src="@drawable/ic_home"
+                android:contentDescription="@string/home_icon"/>
         </LinearLayout>
 
         <LinearLayout
@@ -664,7 +685,8 @@
             <ImageView
                 android:layout_width="26dp"
                 android:layout_height="26dp"
-                android:src="@drawable/ic_bookings"/>
+                android:src="@drawable/ic_bookings"
+                android:contentDescription="@string/bookings_icon"/>
         </LinearLayout>
 
         <LinearLayout
@@ -676,7 +698,8 @@
             <ImageView
                 android:layout_width="26dp"
                 android:layout_height="26dp"
-                android:src="@drawable/ic_calendar"/>
+                android:src="@drawable/ic_calendar"
+                android:contentDescription="@string/calendar_icon"/>
         </LinearLayout>
 
         <LinearLayout
@@ -688,7 +711,8 @@
             <ImageView
                 android:layout_width="26dp"
                 android:layout_height="26dp"
-                android:src="@drawable/ic_chat"/>
+                android:src="@drawable/ic_chat"
+                android:contentDescription="@string/chat_icon"/>
         </LinearLayout>
 
         <LinearLayout
@@ -702,7 +726,8 @@
                 android:layout_height="34dp"
                 android:background="@drawable/circle_bg"
                 android:padding="0dp"
-                android:src="@drawable/ic_user_profile" />
+                android:src="@drawable/ic_user_profile"
+                android:contentDescription="@string/user_profile_icon"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -711,6 +736,7 @@
         android:id="@+id/imageView13"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/circle_bgs" />
+        app:srcCompat="@drawable/circle_bg"
+        android:contentDescription="@null"/>
 
 </LinearLayout>

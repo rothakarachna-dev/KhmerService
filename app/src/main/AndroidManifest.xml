@@ -21,6 +21,10 @@
 
         <activity android:name=".GetStartedActivity" android:exported="false" />
         <activity android:name=".HomepageActivity" android:exported="false" />
+        <activity android:name=".ServiceActivity" />
+        <activity android:name=".AuthActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".SignUpActivity" />
 
     </application>
 

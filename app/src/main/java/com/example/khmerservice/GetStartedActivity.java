@@ -15,9 +15,10 @@ public class GetStartedActivity extends AppCompatActivity {
         Button btnGetStarted = findViewById(R.id.btn_get_start);
 
         btnGetStarted.setOnClickListener(v -> {
-            Intent intent = new Intent(GetStartedActivity.this, HomepageActivity.class);
+            // Updated to redirect to AuthActivity
+            Intent intent = new Intent(GetStartedActivity.this, AuthActivity.class);
             startActivity(intent);
-            finish();
+            finish(); // Finishes this activity so user can't go back to it
         });
     }
 }

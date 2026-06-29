@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.khmerservice"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.khmerservice"
@@ -35,8 +35,11 @@ dependencies {
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.cardview)
+
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("com.android.support.constraint:constraint-layout:1.1.3")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 }

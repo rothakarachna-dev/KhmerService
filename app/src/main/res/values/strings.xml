@@ -6,4 +6,46 @@
     <string name="book1">Book services anytime.</string>
     <string name="get_start">Get started illustration</string>
     <string name="get_start1">Get Start</string>
+    <string name="hello_user">Hello User!</string>
+    <string name="search">Search</string>
+    <string name="todo">TODO</string>
+
+    <!-- Top bar -->
+    <string name="profile_picture">Profile picture</string>
+    <string name="call_support">Call support</string>
+
+    <!-- Search -->
+    <string name="search_icon">Search</string>
+
+    <!-- Category grid -->
+    <string name="repair_icon">Repair</string>
+    <string name="painting_icon">Painting </string>
+    <string name="plumber_icon">Plumber </string>
+    <string name="gardener_icon">Gardener </string>
+    <string name="ac_repair_icon">AC repair </string>
+    <string name="cleaning_icon">Cleaning </string>
+    <string name="moving_icon">Moving </string>
+    <string name="carpenter_icon">Carpenter </string>
+
+    <!-- Banner -->
+    <string name="banner_image">Promotional banner</string>
+    <string name="popular_service">Popular Service</string>
+    <string name="see_all">See All</string>
+
+    <!-- Popular service provider photos -->
+    <string name="electrician_name">So Phana</string>
+    <string name="plumber_name">Sombat</string>
+    <string name="cleaner_name">Sovana</string>
+
+    <string name="plumber_provider_photo">Photo of plumber Ty nita</string>
+    <string name="cleaning_provider_photo">Photo of cleaner Sovana</string>
+
+    <!-- Bottom navigation -->
+    <string name="home_icon">Home</string>
+    <string name="bookings_icon">Bookings</string>
+    <string name="calendar_icon">Calendar</string>
+    <string name="chat_icon">Chat</string>
+    <string name="user_profile_icon">User profile</string>
+
+
 </resources>
