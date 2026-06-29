@@ -6,18 +6,19 @@ import android.os.Handler;
 import android.os.Looper;
 import androidx.appcompat.app.AppCompatActivity;
 
-@SuppressWarnings("CustomSplashScreen")
 public class SplashActivity extends AppCompatActivity {
+
+    private static final int SPLASH_DURATION = 2000; // 2 seconds
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        // Wait 2 seconds then go to onboarding screen 1
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
-            startActivity(new Intent(SplashActivity.this, Onboarding1Activity.class));
+            Intent intent = new Intent(SplashActivity.this, GetStartedActivity.class);
+            startActivity(intent);
             finish();
-        }, 2000);
+        }, SPLASH_DURATION);
     }
 }
