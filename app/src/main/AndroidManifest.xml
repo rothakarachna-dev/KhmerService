@@ -29,6 +29,8 @@
         <activity android:name=".SignUpActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".BookingActivity" />
+        <activity android:name=".ChatActivity" />
+        <activity android:name=".ChatListActivity"/>
 
     </application>
 

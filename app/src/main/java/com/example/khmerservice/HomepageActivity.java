@@ -4,9 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.LinearLayout; // Ensure this is imported
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
@@ -17,30 +17,38 @@ public class HomepageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        // 1. Retrieve the saved name
+        // Retrieve the saved user name
         SharedPreferences prefs = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
         String userName = prefs.getString("user_name", "User");
 
-        // 2. Set the name in your TextView
+        // Display greeting
         TextView tvHelloUser = findViewById(R.id.tvHelloUser);
         tvHelloUser.setText("Hello, " + userName);
 
-        // 3. Profile Icon click logic
-        LinearLayout layoutProfileIcon = findViewById(R.id.layoutProfileIcon); // Ensure ID matches XML
+        // ==========================
+        // Profile Icon
+        // ==========================
+        LinearLayout layoutProfileIcon = findViewById(R.id.layoutProfileIcon);
         layoutProfileIcon.setOnClickListener(v -> {
             Intent intent = new Intent(HomepageActivity.this, ProfileActivity.class);
             startActivity(intent);
         });
 
-        // 4. Booking Icon click logic
-        findViewById(R.id.layoutBookingIcon).setOnClickListener(v -> {
-            Intent intent = new Intent(HomepageActivity.this, BookingActivity.class);
+        // ==========================
+        // Chat Icon
+        // Opens the All Chats page
+        // ==========================
+        LinearLayout layoutBookingIcon = findViewById(R.id.layoutBookingIcon);
+        layoutBookingIcon.setOnClickListener(v -> {
+            Intent intent = new Intent(HomepageActivity.this, ChatListActivity.class);
             startActivity(intent);
         });
 
-        // 5. CardView logic
-        CardView cardAC_repair = findViewById(R.id.cardAC_repair);
-        cardAC_repair.setOnClickListener(v -> {
+        // ==========================
+        // AC Repair Service Card
+        // ==========================
+        CardView cardACRepair = findViewById(R.id.cardAC_repair);
+        cardACRepair.setOnClickListener(v -> {
             Intent intent = new Intent(HomepageActivity.this, ServiceActivity.class);
             startActivity(intent);
         });
