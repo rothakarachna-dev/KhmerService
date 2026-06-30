@@ -1,94 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#F5F5F5">
+    android:background="#FFFFFF"
+    tools:context=".ProfileActivity">
 
-    <!-- MAIN CONTENT -->
     <ScrollView
-        android:layout_width="match_parent"
+        android:id="@+id/scrollContent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="20dp">
 
-            <!-- TOP: Profile + Greeting + Notification -->
-            <LinearLayout
+            <!-- Header -->
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content">
 
-                <ImageView
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imgUserAvatar"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:background="@drawable/circle_bg"
-                    android:padding="6dp"
-                    android:src="@drawable/profile_ic"
-                    android:contentDescription="@string/profile_picture"/>
+                    android:background="#222222"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_person_placeholder"
+                    app:shapeAppearanceOverlay="@style/CircleImage"
+                    app:tint="#FFFFFF"/>
 
                 <TextView
-                    android:id="@+id/tvHelloUser"
-                    android:layout_width="0dp"
+                    android:id="@+id/tvGreeting"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_centerVertical="true"
                     android:layout_marginStart="12dp"
-                    android:textSize="17sp"
-                    android:textColor="#555"/>
+                    android:layout_toEndOf="@id/imgUserAvatar"
+                    android:text="Hello User!"
+                    android:textColor="#222222"
+                    android:textSize="16sp"/>
 
                 <ImageView
+                    android:id="@+id/btnSettings"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/ic_phone"
-                    android:background="@drawable/circle_bg"
-                    android:contentDescription="@string/call_support"/>
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="Settings"
+                    android:src="@drawable/ic_settings"/>
 
-            </LinearLayout>
+            </RelativeLayout>
 
-            <!-- SEARCH BAR -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="16dp"
-                app:cardCornerRadius="25dp"
-                app:cardElevation="0dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:paddingStart="18dp"
-                    android:paddingEnd="18dp">
-
-                    <EditText
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:hint="@string/search"
-                        android:background="@null"
-                        android:inputType="text"
-                        android:imeOptions="actionSearch"
-                        android:importantForAutofill="no"
-                        android:textSize="14sp"/>
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:contentDescription="@string/search_icon"
-                        android:src="@drawable/ic_search"/>
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <!-- CATEGORY GRID: 8 icons, 4 columns x 2 rows -->
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -371,305 +344,183 @@
 
             </GridLayout>
 
-            <!-- BANNER IMAGE -->
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="170dp"
-                android:layout_marginTop="20dp"
-                android:background="#DDD"
-                android:scaleType="centerCrop"
-                android:src="@drawable/banner"
-                android:contentDescription="@string/banner_image"/>
-
-            <!-- POPULAR SERVICE TITLE -->
+            <!-- Settings -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:orientation="horizontal">
+                android:layout_marginTop="25dp"
+                android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:id="@+id/rowAddress"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/popular_service"
-                    android:textColor="#777"
-                    android:textSize="14sp"
-                    android:textStyle="bold"/>
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingVertical="10dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                    <ImageView
+                        android:id="@+id/imgIconAddress"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:text="Address"
+                        android:textColor="#9E9E9E"
+                        android:textSize="15sp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/rowBill"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/see_all"
-                    android:textColor="#777"
-                    android:textSize="14sp"/>
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingVertical="10dp">
+
+                    <ImageView
+                        android:id="@+id/imgIconBill"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:text="Bill"
+                        android:textColor="#9E9E9E"
+                        android:textSize="15sp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/rowLanguage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingVertical="10dp">
+
+                    <ImageView
+                        android:id="@+id/imgIconLanguage"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:text="Language"
+                        android:textColor="#9E9E9E"
+                        android:textSize="15sp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/rowExchangeRate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingVertical="10dp">
+
+                    <ImageView
+                        android:id="@+id/imgIconExchangeRate"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:text="Preferred exchange rate"
+                        android:textColor="#9E9E9E"
+                        android:textSize="15sp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/rowFeedback"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingVertical="10dp">
+
+                    <ImageView
+                        android:id="@+id/imgIconFeedback"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:text="Feedback"
+                        android:textColor="#9E9E9E"
+                        android:textSize="15sp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/rowConversion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingVertical="10dp">
+
+                    <ImageView
+                        android:id="@+id/imgIconConversion"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:text="Conversion"
+                        android:textColor="#9E9E9E"
+                        android:textSize="15sp"/>
+                </LinearLayout>
+
             </LinearLayout>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardAC_repair"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                app:cardCornerRadius="14dp"
-                app:cardElevation="0dp">
+            <include
+                android:id="@+id/cardService1"
+                layout="@layout/item_service_card"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#EDE7F6"
-                    android:orientation="horizontal"
-                    android:padding="12dp">
-
-                    <ImageView
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:background="@drawable/circle_bg"
-                        android:padding="2dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/electrician"
-                        android:contentDescription="@string/ac_repair_icon"/>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginStart="12dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/ac_repair_icon"
-                            android:textStyle="bold"
-                            android:textSize="17sp"
-                            android:textColor="#444"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/electrician_name"
-                            android:textColor="#777"
-                            android:textSize="13sp"/>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:background="#4DFFE082"
-                                android:padding="6dp"
-                                android:text="⭐ 4.5"
-                                android:textSize="12sp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:text="$15/h"
-                                android:background="#BBDEFB"
-                                android:padding="6dp"
-                                android:textSize="12sp"/>
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Off 20%"
-                        android:textColor="#F44336"
-                        android:textSize="12sp"/>
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <!-- CARD 2: Plumber -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                app:cardCornerRadius="14dp"
-                app:cardElevation="0dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#EDE7F6"
-                    android:orientation="horizontal"
-                    android:padding="12dp">
-
-                    <ImageView
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:background="@drawable/circle_bg"
-                        android:padding="10dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/plumber_ic"
-                        android:contentDescription="@string/plumber_provider_photo"/>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginStart="12dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/plumber_icon"
-                            android:textStyle="bold"
-                            android:textSize="17sp"
-                            android:textColor="#444"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/plumber_name"
-                            android:textColor="#777"
-                            android:textSize="13sp"/>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="⭐ 4.5"
-                                android:background="#4DFFE082"
-                                android:padding="6dp"
-                                android:textSize="12sp"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:text="$15/h"
-                                android:background="#BBDEFB"
-                                android:padding="6dp"
-                                android:textSize="12sp"/>
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Off 20%"
-                        android:textColor="#F44336"
-                        android:textSize="12sp"/>
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <!-- CARD 3: Cleaning -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="8dp"
-                app:cardCornerRadius="14dp"
-                app:cardElevation="0dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#EDE7F6"
-                    android:orientation="horizontal"
-                    android:padding="12dp">
-
-                    <ImageView
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:background="@drawable/circle_bg"
-                        android:contentDescription="@string/cleaning_provider_photo"
-                        android:padding="10dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/cleaner_ic" />
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/cleaning_icon"
-                            android:textColor="#444"
-                            android:textSize="17sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/cleaner_name"
-                            android:textColor="#777"
-                            android:textSize="13sp" />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:background="#4DFFE082"
-                                android:padding="6dp"
-                                android:text="⭐ 4.5"
-                                android:textSize="12sp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:background="#BBDEFB"
-                                android:padding="6dp"
-                                android:text="$15/h"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Off 20%"
-                        android:textColor="#F44336"
-                        android:textSize="12sp" />
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
+            <include
+                android:id="@+id/cardService2"
+                layout="@layout/item_service_card_alt"/>
 
         </LinearLayout>
+
     </ScrollView>
 
+    <!-- Bottom Navigation -->
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:id="@+id/bottomNavBar"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
         android:background="#FFFFFF"
-        android:gravity="center_vertical"
+        android:elevation="8dp"
         android:orientation="horizontal"
-        android:baselineAligned="false">
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
+            android:id="@+id/navHome"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center">
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
 
             <ImageView
+                android:id="@+id/imgNavHome"
                 android:layout_width="26dp"
                 android:layout_height="26dp"
                 android:src="@drawable/ic_home"
@@ -677,46 +528,39 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/layoutBookingIcon"
+            android:id="@+id/navBooking"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
             android:clickable="true"
-            android:focusable="true"
-            android:background="?attr/selectableItemBackground">
+            android:focusable="true">
 
             <ImageView
+                android:id="@+id/imgNavBooking"
                 android:layout_width="26dp"
                 android:layout_height="26dp"
                 android:src="@drawable/ic_booking"
                 android:contentDescription="@string/bookings_icon"/>
         </LinearLayout>
 
-
         <LinearLayout
-            android:id="@+id/layoutProfileIcon"
+            android:id="@+id/navProfile"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
             android:clickable="true"
-            android:focusable="true"
-            android:background="?attr/selectableItemBackground"> <!-- Adds a nice ripple effect on click -->
+            android:focusable="true">
 
             <ImageView
+                android:id="@+id/imgNavProfile"
                 android:layout_width="26dp"
                 android:layout_height="26dp"
-                android:src="@drawable/profile_edit_ic" />
+                android:src="@drawable/profile_edit_ic"
+                android:contentDescription="Profile"/>
         </LinearLayout>
 
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageView13"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/circle_bg"
-        android:contentDescription="@null"/>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
